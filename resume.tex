@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_GB
 % LaTeX Curriculum Vitae Template
 %
 % Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
@@ -35,11 +36,11 @@
 \geometry{
 	tmargin = 0.9cm,
 	bmargin = 0.9cm,
-	lmargin = 3cm,
+	lmargin = 3.25cm,
 	rmargin = 2.5cm
 }
 
-\renewcommand{\baselinestretch}{0.75} 
+\renewcommand{\baselinestretch}{0.9} 
 
 \usepackage{titlesec}
 \titlespacing*{\section}
@@ -85,30 +86,51 @@
 		\begin{itemize}[leftmargin=0.5em,labelsep=.5em]}
 		{\end{itemize}\end{description}}
 
-\begin{document}
+\usepackage[dvipsnames]{xcolor}
 
+\renewcommand{\familydefault}{\rmdefault}
+\newcommand{\accentcolour}{\color{darkgray}}
+\newcommand{\resumesection}[1]{\section*{\accentcolour #1}}
+\newcommand{\resumeitem}[4]{
+	\dateitem{#1} {\textbf{#2,} {\bfseries\accentcolour#3}
+		
+		#4
+	}	
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\accentcolour}{\color{NavyBlue}}
+\renewcommand{\resumesection}[1]{\section*{\accentcolour #1}}
+\renewcommand{\resumeitem}[4]{
+	\dateitem{#1} {\textbf{#2,} \textit{#3}
+		
+		#4
+	}	
+}
+
+\raggedright
+
+\begin{document}
 % Alternatively, print name centered and bold:
-\centerline{\huge \bf \name}
+\centerline{\rmfamily \accentcolour \Huge \bfseries \name}
 
 \begin{center}
 	\begin{tabular}{ll}
-		Phone: 		&  \\
-		Email: 		& \href{mailto:mgtlake@outlook.com}{\tt mgtlake@outlook.com} \\
+		\textbf{Phone:} 		&  \\
+		\textbf{Email:} 		& \href{mailto:mgtlake@outlook.com}{\tt mgtlake@outlook.com} \\
 		%Homepage: 	& \href{mgtlake.com}{\tt mgtlake.com} \\
-		Github:		& \href{github.com/matthew-lake}{\tt github.com/matthew-lake}
+		\textbf{Github:}		& \href{github.com/matthew-lake}{\tt github.com/matthew-lake}
 	\end{tabular}
 \end{center}
 
-\section*{Education}
+\resumesection{Education}
 \begin{itemize}
-	\dateitem{2014 -- 2019} {\textbf{Bachelor of Engineering (Software) /
+	\dateitem{2014 -- 2019} {\textbf{Bachelor of Engineering (Software) \&
 			Bachelor of Arts (History, Mathematics)}
 		
-		University of Queensland, Australia.
+		University of Queensland, GPA: \textbf{6.48} / 7
 		
-		Studied abroad at University College London on a UQ Exchange Scholarship.
-		
-		GPA: \textbf{6.48} (out of 7)
+		\dateitem{2017} Studied abroad at University College London on a UQ Exchange Scholarship.
 	}
 	
 	%\dateitem{2009 -- 2013} {\textbf{Queensland Certificate of Education}
@@ -117,42 +139,41 @@
 	%}
 \end{itemize}
 
-\section*{Experience}
+\resumesection{Experience}
 \begin{itemize}
-	\dateitem{2017} {\textbf{UQ Tutoring}
+	\resumeitem{2018 -- 2019}{Next Job}{Software Development Engineer Intern}{
+		The quick brown fox jumped over the lazy dog. Lorem imsupm amet dolar.
 		
-		Tutored CSSE2002 `Programming in the Large' at the University of Queensland.
+		Lorem ipsum amet dolar qui face tirem neuvo. The quick brown fox jumped over the lazy dog. She sells sea shells by the sea shore.
 		
+		How much wood could a wood-chuck chuck if a woodchuck could chuck wood. 
+	}
+	
+	\resumeitem{2017}{University of Queensland}{Tutor: CSSE2002 `Programming in the Large'}{		
 		Taught program design patterns, formal specifications, and structured Java programming, with a median feedback rating of 4.5 / 5 from my students.
 		
 		Responsible for preparing lessons, teaching classes, and grading assessment.
 	}
 
-	\dateitem{2016 -- 2017} {\textbf{UQ Summer Research Scholar}
-		
+	\resumeitem{2016 -- 2017}{University of Queensland}{Summer Research Scholar}{		
 		Worked with Professor Ian Hayes on extending Java to support interface-like Capabilities to enforce explicit permissions and restrict cross-object privilege access.
 		
 		Researched implementations of runtime interface dispatch and subtype checking, and began implementation of Capabilities in the OpenJDK Parser / Compiler.
 		
 		Project later published as ``Capabilities for Java: Secure access to resources.", Hayes et al.
 	}
-	
-	\dateitem{2014 -- 2016} {\textbf{Tehnika Group}
-		
-		Full stack web development in JavaScript (Node and Angular), PHP and C\# (ASP.NET). Embedded systems in Python.
-		
-		Developed and maintained large line--of--business web applications.
-		
-		Worked independently and in small teams to fulfil client needs.
-	}
-	
-	\dateitem{2016} {\textbf{Google Summer of Code for The Julia Language}
+
+	\dateitem{2016}{\textbf{Google Summer of Code for The Julia Language}
 		
 		Developed an Open Source Interactive Tutorial System for Julia and the Juno IDE.
 		
 		Collaborated remotely with my mentor and the Julia community.
 		
 		Presented at JuliaCon 2016.
+	}
+	
+	\resumeitem{2014 -- 2016}{Tehnika Group}{Web Developer}{		
+		Full stack web development and maintenance of large line--of--business web applications in JavaScript (Node and Angular), PHP and C\# (ASP.NET).
 	}
 	
 	%\dateitem{2014 -- 2016} {\textbf{NovumAVI Consulting}
@@ -163,18 +184,18 @@
 	%\dateitem{2014 -- 2016} \textbf{Private Mathematics Tutoring}
 \end{itemize}
 
-\section*{Skills}
-\begin{itemize}
-	\item {
-		\begin{languages}
-			\item[] \textbf{Proficient:} C\#, Julia, Java, JavaScript, HTML / CSS, SQL
-			\item[] \textbf{Familiar:} Python, Matlab, PHP, VB.NET
-		\end{languages}	
-	}
-	\item \textbf{Technologies:} Git, \LaTeX, Linux
-\end{itemize}
+%\section*{Skills}
+%\begin{itemize}
+%	\item {
+%		\begin{languages}
+%			\item[] \textbf{Proficient:} C\#, Julia, Java, JavaScript, HTML / CSS, SQL
+%			\item[] \textbf{Familiar:} Python, Matlab, PHP, VB.NET
+%		\end{languages}	
+%	}
+%	\item \textbf{Technologies:} Git, \LaTeX, Linux
+%\end{itemize}
 
-\section*{Awards}
+\resumesection{Awards}
 \begin{itemize}
 	\dateitem{2017 -- 2018} {\textbf{Hawken Scholar}
 		
@@ -200,7 +221,7 @@
 	}
 \end{itemize}
 
-\section*{Projects}
+\resumesection{Projects}
 \begin{itemize}
 	%\dateitem{2016} {\textbf{UQFlix}
 	%	
@@ -226,11 +247,11 @@
 		
 		Genetic algorithm in C\# for lossless image compression: up to 20\% smaller than zipped PNG.
 	}
-	\dateitem{2015 -- 2016} {\textbf{Farmsim Game}
-		
-		Farm simulator game in Java with a multi--player marketplace.
-		I played a leading role in this large group project, and personally implemented procedural world generation and agent AI. 
-	}
+	%\dateitem{2015 -- 2016} {\textbf{Farmsim Game}
+	%	
+	%	Farm simulator game in Java with a multi--player marketplace.
+	%	I played a leading role in this large group project, and personally implemented procedural world generation and agent AI. 
+	%}
 	%\dateitem{2015} {\textbf{StreamSaver}
 	%	
 	%	 Java program to save streaming video from UQ Library Video on Demand.
