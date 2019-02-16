@@ -36,16 +36,15 @@
 \geometry{
 	tmargin = 0.9cm,
 	bmargin = 0.9cm,
-	lmargin = 3.25cm,
-	rmargin = 2.5cm
+	lmargin = 2.25cm,
+	rmargin = 1cm
 }
 
-\renewcommand{\baselinestretch}{0.9} 
+\renewcommand{\baselinestretch}{0.85} 
 
 \usepackage{titlesec}
-\titlespacing*{\section}
-{-30pt}{2.2ex}{1ex}
-
+\titlespacing*{\section}{-30pt}{2.2ex}{1ex}
+\titlespacing*{\subsection}{0pt}{0.5ex}{0.5ex}
 \pagenumbering{gobble}
 
 \hyphenpenalty = 500
@@ -88,20 +87,11 @@
 
 \usepackage[dvipsnames]{xcolor}
 
-\renewcommand{\familydefault}{\rmdefault}
-\newcommand{\accentcolour}{\color{darkgray}}
-\newcommand{\resumesection}[1]{\section*{\accentcolour #1}}
-\newcommand{\resumeitem}[4]{
-	\dateitem{#1} {\textbf{#2,} {\bfseries\accentcolour#3}
-		
-		#4
-	}	
-}
-
 \renewcommand{\familydefault}{\sfdefault}
-\renewcommand{\accentcolour}{\color{NavyBlue}}
-\renewcommand{\resumesection}[1]{\section*{\accentcolour #1}}
-\renewcommand{\resumeitem}[4]{
+\newcommand{\accentcolour}{\color{NavyBlue}}
+\newcommand{\resumesection}[1]{\section*{\accentcolour #1}}
+\newcommand{\resumesubsection}[1]{\subsection*{\accentcolour #1}}
+\newcommand{\resumeitem}[4]{
 	\dateitem{#1} {\textbf{#2,} \textit{#3}
 		
 		#4
@@ -110,37 +100,53 @@
 
 \raggedright
 
+\usepackage{paracol}
+
+\setlength\columnseprule{0.75pt}
+\colseprulecolor{NavyBlue}
+\setlength{\columnsep}{2.5em}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,calc}
+
+\newcommand{\score}[2]{
+	\begin{tikzpicture}[baseline]
+	\fill[RoyalBlue] (0, 0) rectangle (#2/5 * 10em, 1.25em) node[midway] {\color{white}#1};
+	\end{tikzpicture}\\
+}
+
 \begin{document}
 % Alternatively, print name centered and bold:
-\centerline{\rmfamily \accentcolour \Huge \bfseries \name}
+\centerline{\Huge \rmfamily \accentcolour \bfseries \name}
+
 
 \begin{center}
 	\begin{tabular}{ll}
 		\textbf{Phone:} 		&  \\
 		\textbf{Email:} 		& \href{mailto:mgtlake@outlook.com}{\tt mgtlake@outlook.com} \\
-		%Homepage: 	& \href{mgtlake.com}{\tt mgtlake.com} \\
-		\textbf{Github:}		& \href{github.com/matthew-lake}{\tt github.com/matthew-lake}
+%		%Homepage: 	& \href{mgtlake.com}{\tt mgtlake.com} \\
+		\textbf{Github:}		& \href{https://github.com/matthew-lake}{\tt github.com/matthew-lake}
 	\end{tabular}
 \end{center}
+\titlespacing*{\section}{-30pt}{0.5ex}{1ex}
+
+\columnratio{0.8, 0.2}
+\begin{paracol}{2}
 
 \resumesection{Education}
+\titlespacing*{\section}{-30pt}{2.2ex}{1ex}
 \begin{itemize}
 	\dateitem{2014 -- 2019} {\textbf{Bachelor of Engineering (Software) \&
 			Bachelor of Arts (History, Mathematics)}
 		
-		University of Queensland, GPA: \textbf{6.48} / 7
+		University of Queensland: \textbf{6.48} / 7
 		
 		\dateitem{2017} Studied abroad at University College London on a UQ Exchange Scholarship.
 	}
-	
-	%\dateitem{2009 -- 2013} {\textbf{Queensland Certificate of Education}
-	%	
-	%	Marist College Ashgrove --- OP: 1
-	%}
 \end{itemize}
 
 \resumesection{Experience}
-\begin{itemize}
+\begin{itemize}	
 	\resumeitem{2018 -- 2019}{Next Job}{Software Development Engineer Intern}{
 		The quick brown fox jumped over the lazy dog. Lorem imsupm amet dolar.
 		
@@ -156,16 +162,16 @@
 	}
 
 	\resumeitem{2016 -- 2017}{University of Queensland}{Summer Research Scholar}{		
-		Worked with Professor Ian Hayes on extending Java to support interface-like Capabilities to enforce explicit permissions and restrict cross-object privilege access.
+		Worked with Professor Ian Hayes on extending Java with interface-like Capabilities that enforce explicit permissions and restrict cross-object privilege access.
 		
 		Researched implementations of runtime interface dispatch and subtype checking, and began implementation of Capabilities in the OpenJDK Parser / Compiler.
 		
-		Project later published as ``Capabilities for Java: Secure access to resources.", Hayes et al.
+		%Project later published as ``Capabilities for Java: Secure access to resources.", Hayes et al.
 	}
 
 	\dateitem{2016}{\textbf{Google Summer of Code for The Julia Language}
 		
-		Developed an Open Source Interactive Tutorial System for Julia and the Juno IDE.
+		Created an Open Source Interactive Tutorial System for Julia and the Juno IDE.
 		
 		Collaborated remotely with my mentor and the Julia community.
 		
@@ -175,25 +181,7 @@
 	\resumeitem{2014 -- 2016}{Tehnika Group}{Web Developer}{		
 		Full stack web development and maintenance of large line--of--business web applications in JavaScript (Node and Angular), PHP and C\# (ASP.NET).
 	}
-	
-	%\dateitem{2014 -- 2016} {\textbf{NovumAVI Consulting}
-	%	
-	%	Web design with Bootstrap and development in PHP.
-	%}
-	
-	%\dateitem{2014 -- 2016} \textbf{Private Mathematics Tutoring}
 \end{itemize}
-
-%\section*{Skills}
-%\begin{itemize}
-%	\item {
-%		\begin{languages}
-%			\item[] \textbf{Proficient:} C\#, Julia, Java, JavaScript, HTML / CSS, SQL
-%			\item[] \textbf{Familiar:} Python, Matlab, PHP, VB.NET
-%		\end{languages}	
-%	}
-%	\item \textbf{Technologies:} Git, \LaTeX, Linux
-%\end{itemize}
 
 \resumesection{Awards}
 \begin{itemize}
@@ -217,62 +205,44 @@
 	}
 	\dateitem{2013} {\textbf{Australian Student Prize}
 		
-		Awarded by the Federal Minister for Education to the top 500 students nationally.
+		Awarded by the Federal Education Minister to the top 500 students nationally.
 	}
 \end{itemize}
 
 \resumesection{Projects}
-\begin{itemize}
-	%\dateitem{2016} {\textbf{UQFlix}
-	%	
-	%	Video-on-demand streaming from the UQ Library using ASP.NET Core MVC, with machine learning recommendations	using a genre-based collaborative filtering algorithm in Julia.
-	%}	
-	
+\begin{itemize}	
 	\dateitem{2016} {\textbf{Borealysis}
 		
 		Machine learning analysis of BHP borehole data at Unearthed Hackathon, achieving \tilde{}90\% accuracy using Deep Neural Networks and Nested Decision Forests through AzureML.
 	}
-
-	%\dateitem{2015 -- 2016} {\textbf{Machine Learning Experiments in Julia}
-	%	
-	%	Experimental recommender system	for special topics course.
-	%}
-
-	%\dateitem{2015} {\textbf{InCiteful}
-	%	
-	%	Node.js web--app for academic citation metrics using the Microsoft Academic Services API.
-	%}
 	
 	\dateitem{2013} {\textbf{Evolutionary Image Compression Algorithm}
 		
 		Genetic algorithm in C\# for lossless image compression: up to 20\% smaller than zipped PNG.
 	}
-	%\dateitem{2015 -- 2016} {\textbf{Farmsim Game}
-	%	
-	%	Farm simulator game in Java with a multi--player marketplace.
-	%	I played a leading role in this large group project, and personally implemented procedural world generation and agent AI. 
-	%}
-	%\dateitem{2015} {\textbf{StreamSaver}
-	%	
-	%	 Java program to save streaming video from UQ Library Video on Demand.
-	%}
-	%\dateitem{2014} {\textbf{Flow Control System}
-	%	
-	%	 Control system in Arduino C++ for adjusting water temperature in a mixing process.
-	%}
-	%\dateitem{2016} {\textbf{IJuliaConverter}
-	%	
-	%	Work--in--progress Julia package for converting between IJulia and code and vice--versa
-	%}
-	%\dateitem{2016} UQCS Hubot Chatbot (Javascript)
-	%\dateitem{2016} Codegolf Website --- Website for a codegolf competition (Python)
-	%\dateitem{2014 -- 2018} \textbf{Member of University of Queensland Computing Society}
-	
-	%\dateitem{2016} {\textbf{Jacaranda Journal}
-	%	
-	%	Published essay `Perception and Reality: Heresy in Western Europe from its Origins to the Albigensian Crusade'
-	%}
 \end{itemize}
+
+\switchcolumn
+
+\titlespacing*{\section}{0pt}{0.5ex}{1ex}
+%\resumesection{Objective}
+%Software Engineering student seeking hands-on technical internship to gain real-world experience and develop my skills.
+\resumesection{Skills}
+\titlespacing*{\section}{0pt}{2.2ex}{1ex}
+\resumesubsection{Languages}
+Java, C\#, Python, HTML / CSS, JavaScript, Julia, SQL, Matlab, PHP
+\resumesubsection{Technologies}
+Git, \LaTeX, Linux, Windows
+\resumesubsection{Applications}
+IntelliJ, Visual Studio, Microsoft Office
+
+
+
+\resumesection{Hobbies}
+In addition to hobbyist programming projects, I am an avid history student, focusing on Medieval History.
+My work has been published in \textit{Jacaranda} Journal.
+
+\end{paracol}
 
 \bigskip
 
