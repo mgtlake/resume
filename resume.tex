@@ -33,13 +33,17 @@
 }
 
 \geometry{
-	tmargin = 1cm,
-	bmargin = 1cm,
+	tmargin = 0.9cm,
+	bmargin = 0.9cm,
 	lmargin = 3cm,
 	rmargin = 2.5cm
 }
 
 \renewcommand{\baselinestretch}{0.75} 
+
+\usepackage{titlesec}
+\titlespacing*{\section}
+{-30pt}{2.2ex}{1ex}
 
 \pagenumbering{gobble}
 
@@ -61,13 +65,13 @@
 \setlength\parindent{0em}
 
 % Make lists without bullets
-%\renewenvironment{itemize}{
-%  \begin{list}{}{
-%    \setlength{\leftmargin}{1.5em}
-%  }
-%}{
-%  \end{list}
-%}
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
 
 \newcommand{\dateitem}[1] {\item[\textbf{#1 :}]}
 \renewcommand{\tilde} {{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}}
@@ -88,9 +92,9 @@
 
 \begin{center}
 	\begin{tabular}{ll}
-		Phone: 		& (+61) 04 1974 7426 \\
+		Phone: 		&  \\
 		Email: 		& \href{mailto:mgtlake@outlook.com}{\tt mgtlake@outlook.com} \\
-		Homepage: 	& \href{mgtlake.com}{\tt mgtlake.com} \\
+		%Homepage: 	& \href{mgtlake.com}{\tt mgtlake.com} \\
 		Github:		& \href{github.com/matthew-lake}{\tt github.com/matthew-lake}
 	\end{tabular}
 \end{center}
@@ -100,11 +104,11 @@
 	\dateitem{2014 -- 2019} {\textbf{Bachelor of Engineering (Software) /
 			Bachelor of Arts (History, Mathematics)}
 		
-		Hawken Scholar (Top 5\% of cohort)
+		University of Queensland, Australia.
 		
-		University of Queensland, Australia
+		Studied abroad at University College London on a UQ Exchange Scholarship.
 		
-		GPA: 6.44/7 (Current)
+		GPA: \textbf{6.48} (out of 7)
 	}
 	
 	%\dateitem{2009 -- 2013} {\textbf{Queensland Certificate of Education}
@@ -115,28 +119,38 @@
 
 \section*{Experience}
 \begin{itemize}
-	\dateitem{2017} {\textbf{UQ Tutor}
+	\dateitem{2017} {\textbf{UQ Tutoring}
 		
-		Tutored the second year programming course `Programming in the Large'.
-	}
-	
-	\dateitem{2016 -- 2017} {\textbf{UQ Summer Scholar}
+		Tutored CSSE2002 `Programming in the Large' at the University of Queensland.
 		
-		Worked under Professor Ian Hayes on Adding Capabilities to Java and the JVM.
+		Taught program design patterns, formal specifications, and structured Java programming, with a median feedback rating of 4.5 / 5 from my students.
+		
+		Responsible for preparing lessons, teaching classes, and grading assessment.
 	}
 
+	\dateitem{2016 -- 2017} {\textbf{UQ Summer Research Scholar}
+		
+		Worked with Professor Ian Hayes on extending Java to support interface-like Capabilities to enforce explicit permissions and restrict cross-object privilege access.
+		
+		Researched implementations of runtime interface dispatch and subtype checking, and began implementation of Capabilities in the OpenJDK Parser / Compiler.
+		
+		Project later published as ``Capabilities for Java: Secure access to resources.", Hayes et al.
+	}
+	
 	\dateitem{2014 -- 2016} {\textbf{Tehnika Group}
 		
 		Full stack web development in JavaScript (Node and Angular), PHP and C\# (ASP.NET). Embedded systems in Python.
 		
-		Development and maintenance of large line--of--business web applications.
+		Developed and maintained large line--of--business web applications.
 		
-		Working independently and in small teams to fulfil client needs.
+		Worked independently and in small teams to fulfil client needs.
 	}
 	
 	\dateitem{2016} {\textbf{Google Summer of Code for The Julia Language}
 		
-		Development of an Open Source Interactive Tutorial System for Julia and Juno.
+		Developed an Open Source Interactive Tutorial System for Julia and the Juno IDE.
+		
+		Collaborated remotely with my mentor and the Julia community.
 		
 		Presented at JuliaCon 2016.
 	}
@@ -146,34 +160,39 @@
 	%	Web design with Bootstrap and development in PHP.
 	%}
 	
-	%\dateitem{2014 -- Present} \textbf{Private Mathematics Tutoring}
+	%\dateitem{2014 -- 2016} \textbf{Private Mathematics Tutoring}
 \end{itemize}
 
 \section*{Skills}
 \begin{itemize}
 	\item {
 		\begin{languages}
-			\item[] \textbf{Proficient:} C\#, Julia, Java, JavaScript, PHP, HTML / CSS, SQL
-			\item[] \textbf{Familiar:} Python, Matlab, VB.NET
+			\item[] \textbf{Proficient:} C\#, Julia, Java, JavaScript, HTML / CSS, SQL
+			\item[] \textbf{Familiar:} Python, Matlab, PHP, VB.NET
 		\end{languages}	
 	}
-	\item \textbf{Technologies:} Git, \LaTeX, Linux, Cygwin
+	\item \textbf{Technologies:} Git, \LaTeX, Linux
 \end{itemize}
 
 \section*{Awards}
 \begin{itemize}
-	\dateitem{2016} \textbf{Dean's Commendation for Academic Excellence}
-	\dateitem{2016} {\textbf{First Prize at the UQ Computing Society Hackathon}
+	\dateitem{2017 -- 2018} {\textbf{Hawken Scholar}
 		
-		For the UQFlix web--app, which provides a front-end for UQ Library movies.
+		Awarded to top 5\% of cohort.
+	}
+	\dateitem{2016 -- 2017} \textbf{Dean's Commendation for Academic Excellence}
+	\dateitem{2016} {\textbf{Winner of UQ Computing Society Hackathon}
+		
+		For UQFlix, a ASP.NET Core web-app which streams video-on-demand from the UQ Library and offers recommendations using genre-based collaborative filtering machine learning in Julia.
 	}
 	\dateitem{2015} {\textbf{Paul Gampe Open Source Award at the UQ ITEE Excellence Showcase}
 		
 		For spearheading the open--sourcing of the FarmSim class project by organising re--licensing with over 60 contributors.
 	}
+
 	\dateitem{2015} {\textbf{QUT Hackathon Prize}
 		
-		For the InCiteful web--app, which provides citation metrics for academics.
+		For the InCiteful web--app, which provides citation metrics for academics using Node.js and the Microsoft Academic Services API.
 	}
 	\dateitem{2013} {\textbf{Australian Student Prize}
 		
@@ -181,24 +200,27 @@
 	}
 \end{itemize}
 
-\section*{Projects, Activities, and Memberships}
+\section*{Projects}
 \begin{itemize}
-	\dateitem{2016} {\textbf{UQFlix}
-		
-		Web-app in C\# and React for a front-end to UQ Library Video on Demand, with suggestions generated through machine-learning.
-	}
-	%\dateitem{2015 -- 2016} {\textbf{Machine Learning Experiments in Julia}
-	%
-	%	Experimental recommender system	for special topics course.
-	%}
+	%\dateitem{2016} {\textbf{UQFlix}
+	%	
+	%	Video-on-demand streaming from the UQ Library using ASP.NET Core MVC, with machine learning recommendations	using a genre-based collaborative filtering algorithm in Julia.
+	%}	
+	
 	\dateitem{2016} {\textbf{Borealysis}
 		
 		Machine learning analysis of BHP borehole data at Unearthed Hackathon, achieving \tilde{}90\% accuracy using Deep Neural Networks and Nested Decision Forests through AzureML.
 	}
-	\dateitem{2015} {\textbf{InCiteful}
-		
-		Node.js web--app for academic citation metrics using the Microsoft Academic Services API.
-	}
+
+	%\dateitem{2015 -- 2016} {\textbf{Machine Learning Experiments in Julia}
+	%	
+	%	Experimental recommender system	for special topics course.
+	%}
+
+	%\dateitem{2015} {\textbf{InCiteful}
+	%	
+	%	Node.js web--app for academic citation metrics using the Microsoft Academic Services API.
+	%}
 	
 	\dateitem{2013} {\textbf{Evolutionary Image Compression Algorithm}
 		
@@ -209,7 +231,7 @@
 		Farm simulator game in Java with a multi--player marketplace.
 		I played a leading role in this large group project, and personally implemented procedural world generation and agent AI. 
 	}
-	% \dateitem{2015} {\textbf{StreamSaver}
+	%\dateitem{2015} {\textbf{StreamSaver}
 	%	
 	%	 Java program to save streaming video from UQ Library Video on Demand.
 	%}
@@ -223,7 +245,12 @@
 	%}
 	%\dateitem{2016} UQCS Hubot Chatbot (Javascript)
 	%\dateitem{2016} Codegolf Website --- Website for a codegolf competition (Python)
-	\dateitem{2014 -- Present} \textbf{Member of University of Queensland Computing Society}
+	%\dateitem{2014 -- 2018} \textbf{Member of University of Queensland Computing Society}
+	
+	%\dateitem{2016} {\textbf{Jacaranda Journal}
+	%	
+	%	Published essay `Perception and Reality: Heresy in Western Europe from its Origins to the Albigensian Crusade'
+	%}
 \end{itemize}
 
 \bigskip
