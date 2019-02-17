@@ -79,29 +79,13 @@
 
 \usepackage{enumitem}
 \newlength{\jeroenlen}
-\newenvironment{languages}
-{\settowidth{\jeroenlen}{\textbf{Languages:}}%
-	\begin{description}[leftmargin=\jeroenlen,labelwidth=0pt,labelsep=0pt]
-		\item[\textbf{Languages:}]%
-		\begin{itemize}[leftmargin=0.5em,labelsep=.5em]}
-		{\end{itemize}\end{description}}
 
 \usepackage[dvipsnames]{xcolor}
 
-\renewcommand{\familydefault}{\rmdefault}
-\newcommand{\accentcolour}{\color{darkgray}}
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\accentcolour}{\color{NavyBlue}}
 \newcommand{\resumesection}[1]{\section*{\accentcolour #1}}
 \newcommand{\resumeitem}[4]{
-	\dateitem{#1} {\textbf{#2,} {\bfseries\accentcolour#3}
-		
-		#4
-	}	
-}
-
-\renewcommand{\familydefault}{\sfdefault}
-\renewcommand{\accentcolour}{\color{NavyBlue}}
-\renewcommand{\resumesection}[1]{\section*{\accentcolour #1}}
-\renewcommand{\resumeitem}[4]{
 	\dateitem{#1} {\textbf{#2,} \textit{#3}
 		
 		#4
@@ -110,96 +94,99 @@
 
 \raggedright
 
+\usepackage{colortbl}
+\setlength\arrayrulewidth{1pt}
+\usepackage{fontawesome}
+
 \begin{document}
 % Alternatively, print name centered and bold:
 \centerline{\rmfamily \accentcolour \Huge \bfseries \name}
+\vspace{-0.5\baselineskip}
 
 \begin{center}
-	\begin{tabular}{ll}
-		\textbf{Phone:} 		&  \\
-		\textbf{Email:} 		& \href{mailto:mgtlake@outlook.com}{\tt mgtlake@outlook.com} \\
-		%Homepage: 	& \href{mgtlake.com}{\tt mgtlake.com} \\
-		\textbf{Github:}		& \href{github.com/matthew-lake}{\tt github.com/matthew-lake}
+%	\large
+
+	\begin{tabular}{c  c c c}
+		{\color{NavyBlue}\faPhone\space} 0419 747 426 & 
+		{\color{NavyBlue}\faEnvelope\space} \href{mailto:mgtlake@outlook.com}{mgtlake@outlook.com} & 
+		{\color{NavyBlue}\faGithub\space} \href{github.com/matthew-lake}{github.com/mgtlake} & 
+		{\color{NavyBlue}\faLinkedinSquare\space} \href{linkedin.com/in/mgtlake}{linkedin.com/in/mgtlake}
 	\end{tabular}
 \end{center}
 
 \resumesection{Education}
-\begin{itemize}
+\begin{itemize}[itemsep=1pt]
 	\dateitem{2014 -- 2019} {\textbf{Bachelor of Engineering (Software) \&
 			Bachelor of Arts (History, Mathematics)}
 		
-		University of Queensland, GPA: \textbf{6.48} / 7
+		University of Queensland, GPA: 6.49 / 7
 		
 		\dateitem{2017} Studied abroad at University College London on a UQ Exchange Scholarship.
 	}
-	
-	%\dateitem{2009 -- 2013} {\textbf{Queensland Certificate of Education}
-	%	
-	%	Marist College Ashgrove --- OP: 1
-	%}
 \end{itemize}
+
+%	, connecting to an internal process visualisation service via AWS Kinesis
 
 \resumesection{Experience}
 \begin{itemize}
-	\resumeitem{2018 -- 2019}{Next Job}{Software Development Engineer Intern}{
-		The quick brown fox jumped over the lazy dog. Lorem imsupm amet dolar.
+	\resumeitem{2018 -- 2019}{Amazon}{Software Development Engineer Intern}{
+		Developed a library for API logging using Spring Aspect-Orientated-Programming and Java annotations. Built infrastructure to redact sensitive customer data, and designed blacklists adhering to internal Data Classification standards.
 		
-		Lorem ipsum amet dolar qui face tirem neuvo. The quick brown fox jumped over the lazy dog. She sells sea shells by the sea shore.
+		Worked on a high-availability backend service managing on-site fulfillment of Amazon Fresh pickup orders. Tuned the DynamoDB database to support 10x scaling.
 		
-		How much wood could a wood-chuck chuck if a woodchuck could chuck wood. 
+%		Designed algorithms to locate an RFID tag in n-dimensional space for a prototype smart warehouse.
+		Designed algorithms for non-linear spatial location of RFID tags for a prototype smart warehouse.
+		
+		Developed Chaos Engineering tools for AWS Lambda. % TODO expand this
+		
+		First place in two internal hackathons, and second place in an internal algorithms contest. % TODO is this relevent enough?
 	}
 	
-	\resumeitem{2017}{University of Queensland}{Tutor: CSSE2002 `Programming in the Large'}{		
-		Taught program design patterns, formal specifications, and structured Java programming, with a median feedback rating of 4.5 / 5 from my students.
+	\resumeitem{2017 -- 2019}{University of Queensland}{Tutor}{	
+		Responsible for preparing lessons, teaching classes, and grading assessment, with a student feedback rating of 4.86 / 5.
 		
-		Responsible for preparing lessons, teaching classes, and grading assessment.
+		% TODO this looks kind of awkward. Bit of wall of text, and unique structure
+		CSSE2002 `Programming in the Large' (3 Semesters)
+		\begin{itemize}[noitemsep,topsep=0pt]
+			\item[] Taught OOP design patterns, formal specifications, and intermediate Java programming.
+		\end{itemize}		
+		CSSE3100 `Reasoning About Programs' (1 Semester)
 	}
 
 	\resumeitem{2016 -- 2017}{University of Queensland}{Summer Research Scholar}{		
 		Worked with Professor Ian Hayes on extending Java to support interface-like Capabilities to enforce explicit permissions and restrict cross-object privilege access.
 		
 		Researched implementations of runtime interface dispatch and subtype checking, and began implementation of Capabilities in the OpenJDK Parser / Compiler.
-		
-		Project later published as ``Capabilities for Java: Secure access to resources.", Hayes et al.
 	}
 
 	\dateitem{2016}{\textbf{Google Summer of Code for The Julia Language}
 		
-		Developed an Open Source Interactive Tutorial System for Julia and the Juno IDE.
-		
-		Collaborated remotely with my mentor and the Julia community.
-		
-		Presented at JuliaCon 2016.
+		Developed an IDE-integrated interactive tutorial system for Julia. Presented at JuliaCon 2016.
 	}
 	
 	\resumeitem{2014 -- 2016}{Tehnika Group}{Web Developer}{		
 		Full stack web development and maintenance of large line--of--business web applications in JavaScript (Node and Angular), PHP and C\# (ASP.NET).
 	}
-	
-	%\dateitem{2014 -- 2016} {\textbf{NovumAVI Consulting}
-	%	
-	%	Web design with Bootstrap and development in PHP.
-	%}
-	
-	%\dateitem{2014 -- 2016} \textbf{Private Mathematics Tutoring}
 \end{itemize}
 
-%\section*{Skills}
-%\begin{itemize}
-%	\item {
-%		\begin{languages}
-%			\item[] \textbf{Proficient:} C\#, Julia, Java, JavaScript, HTML / CSS, SQL
-%			\item[] \textbf{Familiar:} Python, Matlab, PHP, VB.NET
-%		\end{languages}	
+\resumesection{Skills}
+\begin{itemize}[itemsep=1pt]
+	\dateitem{Languages} {
+		\textbf{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL
+		
+		\textbf{Familiar:} JavaScript, C, Matlab, PHP
+	}
+	\dateitem{Technologies} {
+		AWS, Spring, Git, Linux, \LaTeX
+	}
+%	\dateitem{Methodologies} {
+%		Continuous Integration, Scrum, Kanban, Formal Verification
 %	}
-%	\item \textbf{Technologies:} Git, \LaTeX, Linux
-%\end{itemize}
+\end{itemize}
 
 \resumesection{Awards}
-\begin{itemize}
-	\dateitem{2017 -- 2018} {\textbf{Hawken Scholar}
-		
-		Awarded to top 5\% of cohort.
+\begin{itemize}[itemsep=1pt]
+	\dateitem{2017 -- 2019} {\textbf{Hawken Scholar} Awarded to top 5\% of the UQ Engineering cohort.
 	}
 	\dateitem{2016 -- 2017} \textbf{Dean's Commendation for Academic Excellence}
 	\dateitem{2016} {\textbf{Winner of UQ Computing Society Hackathon}
@@ -208,80 +195,30 @@
 	}
 	\dateitem{2015} {\textbf{Paul Gampe Open Source Award at the UQ ITEE Excellence Showcase}
 		
-		For spearheading the open--sourcing of the FarmSim class project by organising re--licensing with over 60 contributors.
+		For spearheading the open--sourcing of the FarmSim class project with over 60 contributors.
 	}
 
 	\dateitem{2015} {\textbf{QUT Hackathon Prize}
 		
 		For the InCiteful web--app, which provides citation metrics for academics using Node.js and the Microsoft Academic Services API.
 	}
-	\dateitem{2013} {\textbf{Australian Student Prize}
-		
-		Awarded by the Federal Minister for Education to the top 500 students nationally.
+	\dateitem{2013} {\textbf{Australian Student Prize} Awarded to the top 500 students nationally by the Education Minister.
 	}
 \end{itemize}
 
+% TODO mention UQCS management commitee
 \resumesection{Projects}
-\begin{itemize}
-	%\dateitem{2016} {\textbf{UQFlix}
-	%	
-	%	Video-on-demand streaming from the UQ Library using ASP.NET Core MVC, with machine learning recommendations	using a genre-based collaborative filtering algorithm in Julia.
-	%}	
-	
+\begin{itemize}	
 	\dateitem{2016} {\textbf{Borealysis}
 		
 		Machine learning analysis of BHP borehole data at Unearthed Hackathon, achieving \tilde{}90\% accuracy using Deep Neural Networks and Nested Decision Forests through AzureML.
 	}
-
-	%\dateitem{2015 -- 2016} {\textbf{Machine Learning Experiments in Julia}
-	%	
-	%	Experimental recommender system	for special topics course.
-	%}
-
-	%\dateitem{2015} {\textbf{InCiteful}
-	%	
-	%	Node.js web--app for academic citation metrics using the Microsoft Academic Services API.
-	%}
 	
 	\dateitem{2013} {\textbf{Evolutionary Image Compression Algorithm}
 		
 		Genetic algorithm in C\# for lossless image compression: up to 20\% smaller than zipped PNG.
 	}
-	%\dateitem{2015 -- 2016} {\textbf{Farmsim Game}
-	%	
-	%	Farm simulator game in Java with a multi--player marketplace.
-	%	I played a leading role in this large group project, and personally implemented procedural world generation and agent AI. 
-	%}
-	%\dateitem{2015} {\textbf{StreamSaver}
-	%	
-	%	 Java program to save streaming video from UQ Library Video on Demand.
-	%}
-	%\dateitem{2014} {\textbf{Flow Control System}
-	%	
-	%	 Control system in Arduino C++ for adjusting water temperature in a mixing process.
-	%}
-	%\dateitem{2016} {\textbf{IJuliaConverter}
-	%	
-	%	Work--in--progress Julia package for converting between IJulia and code and vice--versa
-	%}
-	%\dateitem{2016} UQCS Hubot Chatbot (Javascript)
-	%\dateitem{2016} Codegolf Website --- Website for a codegolf competition (Python)
-	%\dateitem{2014 -- 2018} \textbf{Member of University of Queensland Computing Society}
-	
-	%\dateitem{2016} {\textbf{Jacaranda Journal}
-	%	
-	%	Published essay `Perception and Reality: Heresy in Western Europe from its Origins to the Albigensian Crusade'
-	%}
 \end{itemize}
 
 \bigskip
-
-% Footer
-%\begin{center}
-%  \begin{footnotesize}
-%    Last updated: \today \\
-%    \href{\footerlink}{\texttt{\footerlink}}
-%  \end{footnotesize}
-%\end{center}
-
 \end{document}
