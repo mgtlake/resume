@@ -18,10 +18,6 @@
 % Set your name here
 \def\name{Matthew Lake}
 
-% Replace this with a link to your CV if you like, or set it empty
-% (as in \def\footerlink{}) to remove the link in the footer:
-%\def\footerlink{}
-
 % The following metadata will show up in the PDF properties
 \hypersetup{
   colorlinks = true,
@@ -33,34 +29,24 @@
   pdfpagemode = UseNone
 }
 
+% Set margins and spacing
 \geometry{
-	tmargin = 0.9cm,
+	tmargin = 0.75cm,
 	bmargin = 0.9cm,
 	lmargin = 3.25cm,
 	rmargin = 2.5cm
 }
-
 \renewcommand{\baselinestretch}{0.9} 
-
 \usepackage{titlesec}
 \titlespacing*{\section}
-{-30pt}{2.2ex}{1ex}
+{-30pt}{0pt}{1ex}
 
+% Remove page numbering
 \pagenumbering{gobble}
 
+% Prevent hyphenation
 \hyphenpenalty = 500
-
-% Customize page headers
-%\pagestyle{myheadings}
-%\markright{\name}
-%\thispagestyle{empty}
-
-% Other possible font commands include:
-% \ttfamily for teletype,
-% \sffamily for sans serif,
-% \bfseries for bold,
-% \scshape for small caps,
-% \normalsize, \large, \Large, \LARGE sizes.
+\raggedright
 
 % Don't indent paragraphs.
 \setlength\parindent{0em}
@@ -73,17 +59,11 @@
 }{
   \end{list}
 }
-
-\newcommand{\dateitem}[1] {\item[\textbf{#1 :}]}
-\renewcommand{\tilde} {{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}}
-
 \usepackage{enumitem}
 \newlength{\jeroenlen}
 
-\usepackage[dvipsnames]{xcolor}
-
-\renewcommand{\familydefault}{\sfdefault}
-\newcommand{\accentcolour}{\color{NavyBlue}}
+% Template for resume items
+\newcommand{\dateitem}[1] {\item[\textbf{#1 :}]}
 \newcommand{\resumesection}[1]{\section*{\accentcolour #1}}
 \newcommand{\resumeitem}[4]{
 	\dateitem{#1} {\textbf{#2,} \textit{#3}
@@ -92,20 +72,19 @@
 	}	
 }
 
-\raggedright
+% Use sans-serif font
+\renewcommand{\familydefault}{\sfdefault}
 
-\usepackage{colortbl}
-\setlength\arrayrulewidth{1pt}
+% Nice icons and colours
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\accentcolour}{\color{NavyBlue}}
 \usepackage{fontawesome}
 
 \begin{document}
-% Alternatively, print name centered and bold:
 \centerline{\rmfamily \accentcolour \Huge \bfseries \name}
 \vspace{-0.5\baselineskip}
 
 \begin{center}
-%	\large
-
 	\begin{tabular}{c  c c c}
 		{\color{NavyBlue}\faPhone\space} 0419 747 426 & 
 		{\color{NavyBlue}\faEnvelope\space} \href{mailto:mgtlake@outlook.com}{mgtlake@outlook.com} & 
@@ -115,12 +94,14 @@
 \end{center}
 
 \resumesection{Education}
-\begin{itemize}[itemsep=1pt]
+\begin{itemize}[itemsep=0pt]
 	\dateitem{2014 -- 2019} {\textbf{Bachelor of Engineering (Software) \&
 			Bachelor of Arts (History, Mathematics)}
 		
 		University of Queensland, GPA: 6.49 / 7
 		
+		% TODO is this the right place to mention?
+		\dateitem{2019} UQ Computing Society management committee member.
 		\dateitem{2017} Studied abroad at University College London on a UQ Exchange Scholarship.
 	}
 \end{itemize}
@@ -132,25 +113,24 @@
 	\resumeitem{2018 -- 2019}{Amazon}{Software Development Engineer Intern}{
 		Developed a library for API logging using Spring Aspect-Orientated-Programming and Java annotations. Built infrastructure to redact sensitive customer data, and designed blacklists adhering to internal Data Classification standards.
 		
-		Worked on a high-availability backend service managing on-site fulfillment of Amazon Fresh pickup orders. Tuned the DynamoDB database to support 10x scaling.
+		Worked on a high-availability Java Spring backend service managing on-site fulfilment of Amazon Fresh pickup orders. Tuned the DynamoDB database to support 10x scaling.
 		
 %		Designed algorithms to locate an RFID tag in n-dimensional space for a prototype smart warehouse.
 		Designed algorithms for non-linear spatial location of RFID tags for a prototype smart warehouse.
 		
-		Developed Chaos Engineering tools for AWS Lambda. % TODO expand this
+		Developed Chaos Engineering tools for AWS Lambda, using Python and Node JS.
 		
 		First place in two internal hackathons, and second place in an internal algorithms contest. % TODO is this relevent enough?
 	}
 	
 	\resumeitem{2017 -- 2019}{University of Queensland}{Tutor}{	
-		Responsible for preparing lessons, teaching classes, and grading assessment, with a student feedback rating of 4.86 / 5.
+		Prepared lessons, taught classes, and graded assessment. Student feedback rating of 4.86 / 5.
 		
-		% TODO this looks kind of awkward. Bit of wall of text, and unique structure
-		CSSE2002 `Programming in the Large' (3 Semesters)
+		\textit{CSSE2002 `Programming in the Large'} (3 Semesters)
 		\begin{itemize}[noitemsep,topsep=0pt]
 			\item[] Taught OOP design patterns, formal specifications, and intermediate Java programming.
 		\end{itemize}		
-		CSSE3100 `Reasoning About Programs' (1 Semester)
+		\textit{CSSE3100 `Reasoning About Programs'} (1 Semester)
 	}
 
 	\resumeitem{2016 -- 2017}{University of Queensland}{Summer Research Scholar}{		
@@ -172,9 +152,13 @@
 \resumesection{Skills}
 \begin{itemize}[itemsep=1pt]
 	\dateitem{Languages} {
-		\textbf{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL
-		
-		\textbf{Familiar:} JavaScript, C, Matlab, PHP
+%		Java, C\#, Julia, Python, HTML / CSS, SQL, JavaScript, C, Matlab, PHP
+%		\textbf{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL
+%		
+%		\textbf{Familiar:} JavaScript, C, Matlab, PHP
+
+	\textit{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL;
+	\textit{Familiar:} JavaScript, C, Matlab, PHP
 	}
 	\dateitem{Technologies} {
 		AWS, Spring, Git, Linux, \LaTeX
@@ -200,18 +184,21 @@
 
 	\dateitem{2015} {\textbf{QUT Hackathon Prize}
 		
-		For the InCiteful web--app, which provides citation metrics for academics using Node.js and the Microsoft Academic Services API.
+%		For the InCiteful web--app, which provides citation metrics for academics using Node.js and the Microsoft Academic Services API.
+		
+		An academic citation metrics web--app using Node.js and the Microsoft Academic Knowledge API.
+		
+%		For InCiteful, a Node.js web--app providing citation metrics for academics using the Microsoft Academic Knowledge API.
 	}
 	\dateitem{2013} {\textbf{Australian Student Prize} Awarded to the top 500 students nationally by the Education Minister.
 	}
 \end{itemize}
 
-% TODO mention UQCS management commitee
 \resumesection{Projects}
 \begin{itemize}	
 	\dateitem{2016} {\textbf{Borealysis}
 		
-		Machine learning analysis of BHP borehole data at Unearthed Hackathon, achieving \tilde{}90\% accuracy using Deep Neural Networks and Nested Decision Forests through AzureML.
+		Machine learning analysis of BHP borehole data at Unearthed Hackathon, achieving 90\% accuracy using Deep Neural Networks and Nested Decision Forests through AzureML.
 	}
 	
 	\dateitem{2013} {\textbf{Evolutionary Image Compression Algorithm}
