@@ -32,14 +32,14 @@
 % Set margins and spacing
 \geometry{
 	tmargin = 0.75cm,
-	bmargin = 0.9cm,
-	lmargin = 3.25cm,
+	bmargin = 0.8cm,
+	lmargin = 3.1cm,
 	rmargin = 2.5cm
 }
-\renewcommand{\baselinestretch}{0.9} 
+\renewcommand{\baselinestretch}{0.89} 
 \usepackage{titlesec}
 \titlespacing*{\section}
-{-30pt}{0pt}{1ex}
+{-30pt}{0pt}{0.9ex}
 
 % Remove page numbering
 \pagenumbering{gobble}
@@ -88,8 +88,8 @@
 	\begin{tabular}{c  c c c}
 		{\color{NavyBlue}\faPhone\space} 0419 747 426 & 
 		{\color{NavyBlue}\faEnvelope\space} \href{mailto:mgtlake@outlook.com}{mgtlake@outlook.com} & 
-		{\color{NavyBlue}\faGithub\space} \href{github.com/matthew-lake}{github.com/mgtlake} & 
-		{\color{NavyBlue}\faLinkedinSquare\space} \href{linkedin.com/in/mgtlake}{linkedin.com/in/mgtlake}
+		{\color{NavyBlue}\faGithub\space} \href{https://github.com/mgtlake}{github.com/mgtlake} & 
+		{\color{NavyBlue}\faLinkedinSquare\space} \href{https://linkedin.com/in/mgtlake}{linkedin.com/in/mgtlake}
 	\end{tabular}
 \end{center}
 
@@ -100,13 +100,11 @@
 		
 		University of Queensland, GPA: 6.49 / 7
 		
-		% TODO is this the right place to mention?
 		\dateitem{2019} UQ Computing Society management committee member.
 		\dateitem{2017} Studied abroad at University College London on a UQ Exchange Scholarship.
 	}
 \end{itemize}
 
-%	, connecting to an internal process visualisation service via AWS Kinesis
 
 \resumesection{Experience}
 \begin{itemize}
@@ -115,12 +113,11 @@
 		
 		Worked on a high-availability Java Spring backend service managing on-site fulfilment of Amazon Fresh pickup orders. Tuned the DynamoDB database to support 10x scaling.
 		
-%		Designed algorithms to locate an RFID tag in n-dimensional space for a prototype smart warehouse.
 		Designed algorithms for non-linear spatial location of RFID tags for a prototype smart warehouse.
 		
 		Developed Chaos Engineering tools for AWS Lambda, using Python and Node JS.
 		
-		First place in two internal hackathons, and second place in an internal algorithms contest. % TODO is this relevent enough?
+		First place in two internal hackathons, and second place in an internal algorithms contest.
 	}
 	
 	\resumeitem{2017 -- 2019}{University of Queensland}{Tutor}{	
@@ -131,6 +128,9 @@
 			\item[] Taught OOP design patterns, formal specifications, and intermediate Java programming.
 		\end{itemize}		
 		\textit{CSSE3100 `Reasoning About Programs'} (1 Semester)
+		\begin{itemize}[noitemsep,topsep=0pt]
+			\item[] Taught predicate logic, formal verification, and automated correctness proofs.
+		\end{itemize}		
 	}
 
 	\resumeitem{2016 -- 2017}{University of Queensland}{Summer Research Scholar}{		
@@ -150,15 +150,10 @@
 \end{itemize}
 
 \resumesection{Skills}
-\begin{itemize}[itemsep=1pt]
+\begin{itemize}[itemsep=1pt]  
 	\dateitem{Languages} {
-%		Java, C\#, Julia, Python, HTML / CSS, SQL, JavaScript, C, Matlab, PHP
-%		\textbf{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL
-%		
-%		\textbf{Familiar:} JavaScript, C, Matlab, PHP
-
-	\textit{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL;
-	\textit{Familiar:} JavaScript, C, Matlab, PHP
+		\textit{Proficient:} Java, C\#, Julia, Python, HTML / CSS, SQL;
+		\textit{Familiar:} JavaScript, C, Matlab, PHP
 	}
 	\dateitem{Technologies} {
 		AWS, Spring, Git, Linux, \LaTeX
@@ -170,9 +165,9 @@
 
 \resumesection{Awards}
 \begin{itemize}[itemsep=1pt]
-	\dateitem{2017 -- 2019} {\textbf{Hawken Scholar} Awarded to top 5\% of the UQ Engineering cohort.
+	\dateitem{2017 -- 2019} {\textbf{Hawken Scholar} Awarded to the top 5\% of the UQ Engineering cohort.
 	}
-	\dateitem{2016 -- 2017} \textbf{Dean's Commendation for Academic Excellence}
+	\dateitem{2016 -- 2018} \textbf{Dean's Commendation for Academic Excellence}
 	\dateitem{2016} {\textbf{Winner of UQ Computing Society Hackathon}
 		
 		For UQFlix, a ASP.NET Core web-app which streams video-on-demand from the UQ Library and offers recommendations using genre-based collaborative filtering machine learning in Julia.
@@ -184,11 +179,7 @@
 
 	\dateitem{2015} {\textbf{QUT Hackathon Prize}
 		
-%		For the InCiteful web--app, which provides citation metrics for academics using Node.js and the Microsoft Academic Services API.
-		
-		An academic citation metrics web--app using Node.js and the Microsoft Academic Knowledge API.
-		
-%		For InCiteful, a Node.js web--app providing citation metrics for academics using the Microsoft Academic Knowledge API.
+		An academic citation metrics web--app using Node JS and the Microsoft Academic Knowledge API.
 	}
 	\dateitem{2013} {\textbf{Australian Student Prize} Awarded to the top 500 students nationally by the Education Minister.
 	}
@@ -196,12 +187,12 @@
 
 \resumesection{Projects}
 \begin{itemize}	
-	\dateitem{2016} {\textbf{Borealysis}
+	\item[] {\textbf{Borealysis}, \textit{\href{https://github.com/hax0rs/Borealysis}{github.com/hax0rs/Borealysis}}
 		
 		Machine learning analysis of BHP borehole data at Unearthed Hackathon, achieving 90\% accuracy using Deep Neural Networks and Nested Decision Forests through AzureML.
 	}
 	
-	\dateitem{2013} {\textbf{Evolutionary Image Compression Algorithm}
+	\item[] {\textbf{Evolutionary Image Compression Algorithm}, \textit{\href{https://github.com/mgtlake/EvoImageCompression}{github.com/mgtlake/EvoImageCompression}}
 		
 		Genetic algorithm in C\# for lossless image compression: up to 20\% smaller than zipped PNG.
 	}
